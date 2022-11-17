@@ -6,11 +6,12 @@
 # install dep
 sudo apt update
 sudo apt install -y wget
-#sudo apt build-dep -y linux
+sudo apt build-dep -y linux
 
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
+# download linaro gcc
 wget http://releases.linaro.org/components/toolchain/binaries/6.3-2017.05/aarch64-linux-gnu/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu.tar.xz
 
 make ARCH=arm64 tinker_edge_r_defconfig CROSS_COMPILE=/media/edger/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu- -j32
