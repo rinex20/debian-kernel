@@ -6,7 +6,7 @@ sed -i "/deb-src/s/# //g" /etc/apt/sources.list
 # install dep
 sudo apt update
 sudo apt install -y wget
-sudo apt build-dep -y linux
+# sudo apt build-dep -y linux
 
 mkdir /usr/local/ARM-toolchain
 
@@ -19,7 +19,8 @@ export PATH=/usr/local/ARM-toolchain/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-lin
 echo $PATH
 
 # change dir to workplace
-cd "${GITHUB_WORKSPACE}" || exit
+# cd "${GITHUB_WORKSPACE}" || exit
+cd ~ 
 ls -l
 
 CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
