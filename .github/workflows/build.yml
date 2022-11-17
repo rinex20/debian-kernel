@@ -17,8 +17,8 @@ jobs:
           remove-android: 'true'
 
       # 不要忘记先 checkout 代码
-      #- name: Checkout
-      #  uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       # 调用自动编译脚本，需要 sudo 权限
       - name: Build
