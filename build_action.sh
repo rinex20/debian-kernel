@@ -21,7 +21,8 @@ echo $PATH
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
-cd debian-kernel
+ls -l
+
 CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
 
 make ARCH=arm64 tinker_edge_r_defconfig CROSS_COMPILE=aarch64-linux-gnu- -j"$CPU_CORES"
