@@ -20,6 +20,7 @@ echo $PATH
 
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
+ls -l
 
 CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
 
