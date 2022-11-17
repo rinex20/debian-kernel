@@ -24,10 +24,10 @@ cd "${GITHUB_WORKSPACE}" || exit
 
 rm -f *.xz
 rm -R gcc*
-# git clone https://github.com/TinkerEdgeR/debian-kernel.git
-# cd debian-kernel
+git clone https://github.com/TinkerEdgeR/debian-kernel.git
+cd debian-kernel
 
-cd /home/runner/work/debian-kernel
+#cd /home/runner/work/debian-kernel
 
 CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
 
