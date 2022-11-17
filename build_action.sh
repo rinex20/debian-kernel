@@ -6,7 +6,7 @@ sed -i "/deb-src/s/# //g" /etc/apt/sources.list
 # install dep
 sudo apt update
 sudo apt install -y wget
-# sudo apt build-dep -y linux
+sudo apt build-dep -y linux
 
 mkdir /usr/local/ARM-toolchain
 
@@ -21,8 +21,9 @@ echo $PATH
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
+rm -f *.xz
+rm -R gcc*
 git clone https://github.com/TinkerEdgeR/debian-kernel.git
-ls -l
 cd debian-kernel
 
 CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
