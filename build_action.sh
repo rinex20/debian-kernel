@@ -22,6 +22,7 @@ echo $PATH
 cd "${GITHUB_WORKSPACE}" || exit
 
 git clone https://github.com/TinkerEdgeR/debian-kernel.git
+ls -l
 cd debian-kernel
 
 CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
