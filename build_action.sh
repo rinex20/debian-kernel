@@ -15,6 +15,7 @@ cd /usr/local/ARM-toolchain
 wget http://releases.linaro.org/components/toolchain/binaries/6.3-2017.05/aarch64-linux-gnu/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu.tar.xz
 xz -d gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu.tar.xz
 tar xvf gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu.tar
+
 export PATH=/usr/local/ARM-toolchain/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin:${PATH}
 echo $PATH
 
@@ -28,8 +29,8 @@ cd debian-kernel
 
 CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
 
-make ARCH=arm64 tinker_edge_r_defconfig CROSS_COMPILE=aarch64-linux-gnu- -j"$CPU_CORES"
-make ARCH=arm64 rk3399pro-tinker_edge_r.img CROSS_COMPILE=aarch64-linux-gnu- -j"$CPU_CORES"
+make ARCH=arm64 tinker_edge_r_defconfig CROSS_COMPILE=/usr/local/ARM-toolchain/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu- -j"$CPU_CORES"
+make ARCH=arm64 rk3399pro-tinker_edge_r.img CROSS_COMPILE=/usr/local/ARM-toolchain/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu- -j"$CPU_CORES"
 
 # build deb packages
 # 获取系统的 CPU 核心数，将核心数X2设置为编译时开启的进程数，以加快编译速度
