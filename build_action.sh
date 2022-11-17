@@ -19,10 +19,9 @@ export PATH=/usr/local/ARM-toolchain/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-lin
 echo $PATH
 
 # change dir to workplace
-# cd "${GITHUB_WORKSPACE}" || exit
-cd ~ 
-ls -l
+cd "${GITHUB_WORKSPACE}" || exit
 
+cd debian-kernel
 CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
 
 make ARCH=arm64 tinker_edge_r_defconfig CROSS_COMPILE=aarch64-linux-gnu- -j"$CPU_CORES"
