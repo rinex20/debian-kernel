@@ -15,7 +15,7 @@ cd /usr/local/ARM-toolchain
 wget http://releases.linaro.org/components/toolchain/binaries/6.3-2017.05/aarch64-linux-gnu/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu.tar.xz
 xz -d gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu.tar.xz
 tar xvf gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu.tar
-export PATH=/usr/local/ARM-toolchain:${PATH}
+export PATH=/usr/local/ARM-toolchain/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin:${PATH}
 echo $PATH
 
 # change dir to workplace
