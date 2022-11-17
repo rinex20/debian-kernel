@@ -21,7 +21,8 @@ echo $PATH
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
-ls -l
+git clone https://github.com/TinkerEdgeR/debian-kernel.git
+cd debian-kernel
 
 CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
 
